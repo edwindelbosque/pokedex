@@ -1,9 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { Outlet, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-import { GET_POKEMON_IMAGE, useQuery } from "./queries";
-import { PokemonDetails } from "./types/types";
+import { GET_POKEMON_IMAGE } from "../queries";
+import { useQuery } from "../hooks";
+import { PokemonDetails } from "../types/types";
 
 const Card = styled.div`
     width: 100%;
@@ -62,30 +63,28 @@ const DetailSection = styled.div`
 `;
 
 const getMainPhoto = (data: any) => {
-    return data?.sprites?.other?.home?.front_default;
+  return data?.sprites?.other?.home?.front_default;
 }
 
 type PokemonCardProps = {
-    name: string;
-    background: string;
+  name: string;
+  background: string;
 }
 
 export const PokemonCard = ({ name, background }: PokemonCardProps) => {
-    const { data, loading, error } = useQuery<PokemonDetails>(GET_POKEMON_IMAGE(name));
-    const mainPhoto = getMainPhoto(data);
-    const profilePhoto = data?.sprites.other.showdown.front_default;
+  const { data, loading, error } = useQuery<PokemonDetails>(GET_POKEMON_IMAGE(name));
+  const mainPhoto = getMainPhoto(data);
+  const profilePhoto = data?.sprites.other.showdown.front_default;
 
-    if (loading) {
-        return <div>Loading...</div>;
-    }
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
-    if (error) {
-        return <div />
-    }
+  if (error) {
+    return <div />
+  }
 
-    console.log("+++ data", data);
-
-    const pokemonUrl = `/pokemons/${name}`;
+  const pokemonUrl = `/pokemons/${name}`;
 
   return (
     <Card>
@@ -96,16 +95,16 @@ export const PokemonCard = ({ name, background }: PokemonCardProps) => {
             {name}
           </Name>
         </LinkContainer>
-    </Header>
-  <Photo src={mainPhoto} background={background} />
-  <DetailSection>
-    <Name to={pokemonUrl}>
-      {name}&nbsp;
-    </Name>
-    <Description>
-      What's up
-    </Description>
-  </DetailSection>
-</Card>
-)
+      </Header>
+      <Photo src={mainPhoto} background={background} />
+      <DetailSection>
+        <Name to={pokemonUrl}>
+          {name}&nbsp;
+        </Name>
+        <Description>
+          What's up
+        </Description>
+      </DetailSection>
+    </Card>
+  )
 };

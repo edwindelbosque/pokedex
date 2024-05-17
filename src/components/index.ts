@@ -1,2 +1,2 @@
 export { TopNavigation } from './TopNavigation';
-export { Feed } from "./Feed";
+export { Feed } from "../routes/Feed";

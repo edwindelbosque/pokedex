@@ -21,7 +21,7 @@ export const useQuery = <T>(url: string): { data: T | undefined, loading: boolea
             }
         };
 
-        fetchData();
+        void fetchData();
     }, [url]);
 
     return { data, loading, error };
