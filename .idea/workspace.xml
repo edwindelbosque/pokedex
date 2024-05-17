@@ -5,15 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d60ed45a-fa8e-439d-bfbc-ae64c009feae" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/types/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PageLayout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PageLayout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PokemonCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PokemonCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PokemonDetails.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PokemonDetails.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/useInfiniteQuery.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useInfiniteQuery.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/useInfiniteScroll.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useInfiniteScroll.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/Feed.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Feed.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +81,7 @@
       <workItem from="1715823793633" duration="147000" />
       <workItem from="1715823965500" duration="327000" />
       <workItem from="1715824365143" duration="24000" />
-      <workItem from="1715824396688" duration="30159000" />
+      <workItem from="1715824396688" duration="30505000" />
     </task>
     <servers />
   </component>
