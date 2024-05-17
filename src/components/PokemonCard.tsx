@@ -116,7 +116,7 @@ export const PokemonCard = ({ name }: PokemonCardProps) => {
           {name}&nbsp;
         </Name>
         <Description>
-          What's up
+          ☀️🌴😎
         </Description>
       </DetailSection>
     </Card>
