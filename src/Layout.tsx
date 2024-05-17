@@ -9,7 +9,7 @@ const Wrapper = styled.div`
     align-items: center;
     justify-content: center;
     padding-block: 40px;
-    background: #572528;
+    background: #d6d6d6;
 `;
 
 const Content = styled.div`

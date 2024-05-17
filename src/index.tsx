@@ -1,17 +1,31 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {
     createBrowserRouter,
     RouterProvider,
 } from "react-router-dom";
+import { ErrorPage } from "./error-page";
+import { PokemonDetail } from "./components/PokemonDetail";
+import { Feed } from "./components";
+import { Root } from "./routes/root";
 
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <App />,
+        element: <Root />,
+        errorElement: <ErrorPage />,
+        children: [
+            {
+                path: "/",
+                element: <Feed />,
+            },
+            {
+                path: "pokemons/:name",
+                element: <PokemonDetail />,
+            },
+        ],
     },
 ]);
 

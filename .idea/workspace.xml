@@ -5,25 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d60ed45a-fa8e-439d-bfbc-ae64c009feae" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Layout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/PokemonCard.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/PokemonList.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/pokedex-logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/TopNavigation.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/queries/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/queries/queries.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/queries/useQuery.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.test.tsx" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Feed.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/PokemonDetail.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/error-page.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/root.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/types/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PokemonCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/PokemonCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PokemonList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/PokemonList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TopNavigation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TopNavigation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/queries/useQuery.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/queries/useQuery.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +88,7 @@
       <workItem from="1715823793633" duration="147000" />
       <workItem from="1715823965500" duration="327000" />
       <workItem from="1715824365143" duration="24000" />
-      <workItem from="1715824396688" duration="8180000" />
+      <workItem from="1715824396688" duration="16200000" />
     </task>
     <servers />
   </component>

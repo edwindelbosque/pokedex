@@ -1,8 +1,5 @@
 import React from 'react';
 
-import { PageLayout } from "./Layout";
-import { PokemonList } from "./PokemonList";
-import { TopNavigation } from "./components";
 import styled from "styled-components";
 
 const AppWrapper = styled.div`
@@ -14,12 +11,7 @@ const AppWrapper = styled.div`
 
 const App = () => {
     return (
-        <AppWrapper>
-            <TopNavigation />
-            <PageLayout>
-                <PokemonList />
-            </PageLayout>
-        </AppWrapper>
+        <AppWrapper />
     );
 };
 

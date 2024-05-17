@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
-export const useQuery = (url: string): { data: any, loading: boolean, error: any } => {
-    const [data, setData] = useState(null);
+export const useQuery = <T>(url: string): { data: T | undefined, loading: boolean, error: any } => {
+    const [data, setData] = useState<T | undefined>();
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<any>(null);
 
