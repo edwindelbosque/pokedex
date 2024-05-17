@@ -1,2 +1,4 @@
 export { TopNavigation } from './TopNavigation';
-export { Feed } from "../routes/Feed";
+export { PokemonDetails } from './PokemonDetails';
+export { PokemonCard } from './PokemonCard';
+export { PageLayout } from './PageLayout';

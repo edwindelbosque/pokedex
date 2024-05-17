@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-
-import './index.css';
-import reportWebVitals from './reportWebVitals';
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import { PokemonDetail } from "./components/PokemonDetail";
+
+import './index.css';
+import reportWebVitals from './reportWebVitals';
+import { PokemonDetails } from "./components";
 import { Feed, Root, NotFound } from "./routes";
 
 const router = createBrowserRouter([
@@ -22,7 +22,7 @@ const router = createBrowserRouter([
       },
       {
         path: "pokemons/:name",
-        element: <PokemonDetail />,
+        element: <PokemonDetails />,
       },
     ],
   },

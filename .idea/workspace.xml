@@ -5,22 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d60ed45a-fa8e-439d-bfbc-ae64c009feae" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/PokemonList.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hooks/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hooks/useInfiniteQuery.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hooks/useInfiniteScroll.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PokemonCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PokemonCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PokemonList.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Feed.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Feed.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/public/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/logo192.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/logo192.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PageLayout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/error-page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/NotFound.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/queries/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/queries/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/queries/queries.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/queries/queries.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/queries/useQuery.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useQuery.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/root.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Root.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/Feed.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Feed.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/Root.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Root.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +47,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/edwin/Dev/pokedex",
+    "last_opened_file_path": "/Users/edwin/Dev/pokedex/public",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -64,12 +59,15 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/routes" />
       <recent name="$PROJECT_DIR$/src/components" />
+      <recent name="$PROJECT_DIR$/public" />
+      <recent name="$PROJECT_DIR$/src/routes" />
       <recent name="$PROJECT_DIR$/src/hooks" />
       <recent name="$PROJECT_DIR$/src/assets" />
-      <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -93,7 +91,7 @@
       <workItem from="1715823793633" duration="147000" />
       <workItem from="1715823965500" duration="327000" />
       <workItem from="1715824365143" duration="24000" />
-      <workItem from="1715824396688" duration="23104000" />
+      <workItem from="1715824396688" duration="24196000" />
     </task>
     <servers />
   </component>

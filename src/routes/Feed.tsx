@@ -1,9 +1,48 @@
-import React from "react";
+import React, {useCallback} from "react";
+import styled from "styled-components";
 
-import { PokemonList } from "../components/PokemonList";
+import { GET_POKEMONS } from "../queries";
+import { PokemonCard } from "../components";
+import { useInfiniteScroll, useInfiniteQuery } from "../hooks";
+
+enum LOCATIONS {
+    CITY = "city",
+    CAVE = "cave",
+    FOREST = "forest",
+    COAST = "coast",
+    VOLCANO = "volcano",
+    GLACIER = "glacier",
+    ARENA = "arena",
+    CANYON = "canyon",
+}
+
+const getBackgroundUrl = () => {
+    return `https://assets.pokemon.com//assets/cms2/img/misc/virtual-backgrounds/masters/${LOCATIONS.FOREST}.jpg`;
+};
+
+const Wrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+`;
 
 export const Feed = () => {
-  return (
-    <PokemonList />
-  )
+    const { loading, error, data, loadMore } = useInfiniteQuery(GET_POKEMONS);
+    const { targetRef } = useInfiniteScroll(loadMore);
+
+    const renderPokemons = useCallback(() => {
+        return data?.map((pokemon: any) => {
+            const { name } = pokemon;
+            return <PokemonCard name={name} background={getBackgroundUrl()} />
+        })
+    }, [data])
+
+    return (
+      <Wrapper>
+        { loading && <div>Some loading state</div>}
+        { error && <div>Some error state</div>}
+        {renderPokemons()}
+        <div ref={targetRef} />
+      </Wrapper>
+    )
 };
