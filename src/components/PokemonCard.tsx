@@ -4,7 +4,22 @@ import { Link } from "react-router-dom";
 
 import { GET_POKEMON_IMAGE } from "../queries";
 import { useQuery } from "../hooks";
-import { PokemonDetails } from "../types/types";
+import { PokemonDetails } from "../types";
+
+enum LOCATIONS {
+  CITY = "city",
+  CAVE = "cave",
+  FOREST = "forest",
+  COAST = "coast",
+  VOLCANO = "volcano",
+  GLACIER = "glacier",
+  ARENA = "arena",
+  CANYON = "canyon",
+}
+
+const getBackgroundUrl = () => {
+  return `https://assets.pokemon.com//assets/cms2/img/misc/virtual-backgrounds/masters/${LOCATIONS.FOREST}.jpg`;
+};
 
 const Card = styled.div`
     width: 100%;
@@ -47,10 +62,10 @@ const Name = styled(Link)`
 const Description = styled.span`
 `;
 
-const Photo = styled.img<{background: string}>`
+const Photo = styled.img`
     width: 100%;
     height: 500px;
-    background-image: url(${props => props.background});
+    background-image: url(${getBackgroundUrl()});
     background-position: center bottom;
     border-block: 1px solid #c1c1c1;
     border-radius: 2px;
@@ -68,10 +83,9 @@ const getMainPhoto = (data: any) => {
 
 type PokemonCardProps = {
   name: string;
-  background: string;
 }
 
-export const PokemonCard = ({ name, background }: PokemonCardProps) => {
+export const PokemonCard = ({ name }: PokemonCardProps) => {
   const { data, loading, error } = useQuery<PokemonDetails>(GET_POKEMON_IMAGE(name));
   const mainPhoto = getMainPhoto(data);
   const profilePhoto = data?.sprites.other.showdown.front_default;
@@ -89,14 +103,14 @@ export const PokemonCard = ({ name, background }: PokemonCardProps) => {
   return (
     <Card>
       <Header>
-        <LinkContainer to={pokemonUrl}>
+        <LinkContainer to={pokemonUrl} state={data}>
           <ProfilePicture src={profilePhoto} />
           <Name to={pokemonUrl}>
             {name}
           </Name>
         </LinkContainer>
       </Header>
-      <Photo src={mainPhoto} background={background} />
+      <Photo src={mainPhoto} />
       <DetailSection>
         <Name to={pokemonUrl}>
           {name}&nbsp;

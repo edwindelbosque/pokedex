@@ -1,3 +1,8 @@
+export interface Pokemon {
+  url: string;
+  name: string;
+}
+
 export interface PokemonDetails {
   abilities: Ability[]
   base_experience: number
