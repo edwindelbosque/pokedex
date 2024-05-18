@@ -1,7 +1,8 @@
-import React from "react";
-import { Link, useParams, ScrollRestoration } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useParams, ScrollRestoration, useLocation } from "react-router-dom";
 import styled from "styled-components";
 
+import { DataField} from "../components";
 import { useQuery } from "../hooks";
 import { GET_POKEMON_IMAGE } from "../queries";
 import { PokemonDetails as PokemonDetailsType } from "../types";
@@ -37,7 +38,8 @@ const Header = styled.div`
 `
 
 const Image = styled.img`
-    width: 500px;
+    max-width: 500px;
+    width: 100%;
 `;
 
 const BackButton = styled(Link)`
@@ -48,15 +50,19 @@ const BackButton = styled(Link)`
     font-weight: bold;
 `;
 
-const DataFieldStyles = styled.div`
-    width: 100%;
-    background: #c8c8c8;
-    padding: 10px;
-`;
-
 export const PokemonDetails = () => {
   const { name } = useParams();
-  const { data, loading, error } = useQuery<PokemonDetailsType>(GET_POKEMON_IMAGE(name || ""));
+  const [detailsData, setDetailsData] = useState<PokemonDetailsType>();
+  const { state } = useLocation();
+
+  const { data, loading, error } = useQuery<PokemonDetailsType>({
+    queryUrl: GET_POKEMON_IMAGE(name || ""),
+    skip: Boolean(state?.data),
+  });
+
+  useEffect(() => {
+    setDetailsData(state?.data || data);
+  }, [data, state])
 
   if (loading) {
     // Add a loading state
@@ -64,7 +70,7 @@ export const PokemonDetails = () => {
   }
 
   if (error) {
-    // Handle error gracefully
+    // Handle and submit error gracefully
     return <div>Error: {error.message}</div>;
   }
 
@@ -76,18 +82,12 @@ export const PokemonDetails = () => {
         <Header>
           {name}
         </Header>
-        <Image src={data?.sprites.other["official-artwork"].front_default} />
-        <DataField fieldName="Height" value={data?.height} />
-        <DataField fieldName="Base experience" value={data?.base_experience} />
-        <DataField fieldName="Order" value={data?.order} />
-        <DataField fieldName="Weight" value={data?.weight} />
+        <Image src={detailsData?.sprites.other["official-artwork"].front_default} />
+        <DataField fieldName="Height" value={detailsData?.height} />
+        <DataField fieldName="Base experience" value={detailsData?.base_experience} />
+        <DataField fieldName="Order" value={detailsData?.order} />
+        <DataField fieldName="Weight" value={detailsData?.weight} />
       </DetailsContainer>
     </Wrapper>
-  )
-}
-
-const DataField = ({ fieldName, value }: { fieldName: string, value?: number | string }) => {
-  return (
-    <DataFieldStyles>{ fieldName }: { value }</DataFieldStyles>
   )
 }

@@ -1,28 +1,38 @@
 import { useState, useEffect } from 'react';
 
-export const useQuery = <T>(url: string): { data: T | undefined, loading: boolean, error: any } => {
-    const [data, setData] = useState<T | undefined>();
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState<any>(null);
+type UseQueryParams = {
+  queryUrl: string;
+  skip?: boolean;
+};
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await fetch(url);
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                const result = await response.json();
-                setData(result);
-                setLoading(false);
-            } catch (e) {
-                setError(e);
-                setLoading(false);
-            }
-        };
+export const useQuery = <T>({ queryUrl, skip }: UseQueryParams): { data: T | undefined, loading: boolean, error: any } => {
+  const [data, setData] = useState<T | undefined>();
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<any>(null);
 
-        void fetchData();
-    }, [url]);
+  useEffect(() => {
+    if (skip) {
+      setLoading(false);
+      return;
+    }
 
-    return { data, loading, error };
+    const fetchData = async () => {
+      try {
+        const response = await fetch(queryUrl);
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const result = await response.json();
+        setData(result);
+        setLoading(false);
+      } catch (e) {
+        setError(e);
+        setLoading(false);
+      }
+    };
+
+    void fetchData();
+  }, [queryUrl, skip]);
+
+  return { data, loading, error };
 };

@@ -48,7 +48,7 @@ export const TopNavigation = () => {
     <Wrapper>
       <Content>
         <LogoArea to={"/"}>
-          <LogoImage src={pokedexLogo} alt="logo"/>
+          <LogoImage src={pokedexLogo} alt="Pokegram logo"/>
           <Text>Pokegram</Text>
         </LogoArea>
       </Content>

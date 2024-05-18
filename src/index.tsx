@@ -7,8 +7,12 @@ import {
 
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import { PokemonDetails } from "./components";
-import { Feed, Root, NotFound } from "./routes";
+import {
+  Root,
+  Feed,
+  PokemonDetails,
+  NotFound
+} from "./routes";
 
 const router = createBrowserRouter([
   {

@@ -7,28 +7,23 @@ import { useQuery } from "../hooks";
 import { PokemonDetails } from "../types";
 
 enum LOCATIONS {
-  CITY = "city",
-  CAVE = "cave",
   FOREST = "forest",
-  COAST = "coast",
-  VOLCANO = "volcano",
-  GLACIER = "glacier",
-  ARENA = "arena",
-  CANYON = "canyon",
 }
 
 const getBackgroundUrl = () => {
   return `https://assets.pokemon.com//assets/cms2/img/misc/virtual-backgrounds/masters/${LOCATIONS.FOREST}.jpg`;
 };
 
+const getMainPhoto = (data: any) => {
+  return data?.sprites?.other?.home?.front_default;
+}
+
 const Card = styled.div`
     width: 100%;
     max-width: 600px;
-    min-width: 600px;
-    height: 660px;
-    background: #fbf1f1;
+    background: #EFEFEF;
     border-radius: 4px;
-    box-shadow: 0 4px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.1);
 `;
 
 const Header = styled.div`
@@ -53,18 +48,20 @@ const ProfilePicture = styled.img`
     border: 1px solid #3a3a3a;
 `;
 
-const Name = styled(Link)`
+const NameHeader = styled.p`
     font-weight: bold;
     text-decoration: none;
     color: #303030;
 `;
 
-const Description = styled.span`
+const NameDescription = styled(Link)`
+    font-weight: bold;
+    text-decoration: none;
+    color: #303030;
 `;
 
 const Photo = styled.img`
     width: 100%;
-    height: 500px;
     background-image: url(${getBackgroundUrl()});
     background-position: center bottom;
     border-block: 1px solid #c1c1c1;
@@ -77,47 +74,56 @@ const DetailSection = styled.div`
     padding: 15px;
 `;
 
-const getMainPhoto = (data: any) => {
-  return data?.sprites?.other?.home?.front_default;
-}
+const CardSkeleton = styled.div`
+    max-width: 600px;
+    width: 500px;
+    min-height: 500px;
+    background: #EFEFEF;
+    border-radius: 4px;
+    box-shadow: 0 4px 2px rgba(0, 0, 0, 0.1);
+`;
 
 type PokemonCardProps = {
   name: string;
 }
 
 export const PokemonCard = ({ name }: PokemonCardProps) => {
-  const { data, loading, error } = useQuery<PokemonDetails>(GET_POKEMON_IMAGE(name));
+  const { data, loading, error } = useQuery<PokemonDetails>({
+    queryUrl: GET_POKEMON_IMAGE(name),
+  });
+
   const mainPhoto = getMainPhoto(data);
   const profilePhoto = data?.sprites.other.showdown.front_default;
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <CardSkeleton />;
   }
 
   if (error) {
-    return <div />
+    return <div>Sorry! We couldn't load the cards, try reloading the page.</div>
   }
 
-  const pokemonUrl = `/pokemons/${name}`;
+  const navigateToPokemonDetails = {
+    to: `/pokemons/${name}`,
+    state: data,
+  }
 
   return (
     <Card>
       <Header>
-        <LinkContainer to={pokemonUrl} state={data}>
-          <ProfilePicture src={profilePhoto} />
-          <Name to={pokemonUrl}>
+        <LinkContainer {...navigateToPokemonDetails}>
+          <ProfilePicture src={profilePhoto} alt={`Profile picture of ${name}`} />
+          <NameHeader>
             {name}
-          </Name>
+          </NameHeader>
         </LinkContainer>
       </Header>
-      <Photo src={mainPhoto} />
+      <Photo src={mainPhoto} alt={`Picture of ${name}`} />
       <DetailSection>
-        <Name to={pokemonUrl}>
+        <NameDescription {...navigateToPokemonDetails}>
           {name}&nbsp;
-        </Name>
-        <Description>
+        </NameDescription>
           ☀️🌴😎
-        </Description>
       </DetailSection>
     </Card>
   )

@@ -1,6 +1,7 @@
 import React, { useCallback } from "react";
 import styled from "styled-components";
 
+import loadingDots from "../assets/loading-dots.gif";
 import { GET_POKEMONS } from "../queries";
 import { PokemonCard } from "../components";
 import { useInfiniteScroll, useInfiniteQuery } from "../hooks";
@@ -9,14 +10,24 @@ import { Pokemon } from "../types";
 const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
-    gap: 60px;
+    align-items: center;
+    gap: 20px;
+`;
+
+const LoadingIcon = styled.img`
+    max-width: 300px;
+    width: 100%;
+`;
+
+const RefetchRefElement = styled.div`
+    height: 200px;
 `;
 
 export const Feed = () => {
   const { loading, error, data, loadMore } = useInfiniteQuery<Pokemon>(GET_POKEMONS);
   const { targetRef } = useInfiniteScroll(loadMore);
 
-  const renderPokemons = useCallback(() => {
+  const renderPokemonCards = useCallback(() => {
     return data?.map(({ name, url }, index: number) => {
       return (
         <PokemonCard
@@ -29,10 +40,10 @@ export const Feed = () => {
 
   return (
     <Wrapper>
-      { loading && <div>Some loading state</div>}
-      { error && <div>Some error state</div>}
-      {renderPokemons()}
-      <div ref={targetRef} />
+      { error && <div>Sorry! We couldn't load the feed, try reloading the page.</div>}
+      {renderPokemonCards()}
+      <RefetchRefElement ref={targetRef} />
+      {loading && <LoadingIcon src={loadingDots} />}
     </Wrapper>
   )
 };
