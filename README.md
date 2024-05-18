@@ -1,5 +1,7 @@
 # Pokegram site
-<img width="838" alt="Screenshot 2024-05-17 at 1 39 54 AM" src="https://github.com/edwindelbosque/pokedex/assets/48811985/c6e01329-3061-4d64-8558-c484c5eabc7b">
+<img width="449" alt="Screenshot 2024-05-18 at 6 02 47 PM" src="https://github.com/edwindelbosque/pokedex/assets/48811985/6d6503fd-9d2f-4aea-a328-407efbbe491e">
+
+Pokegram! Infinite scroll feed of Pokemons, optimized queries, and web responsiveness.
 
 ## Deveoper
 [@edwindelbosque](https://github.com/edwindelbosque)
