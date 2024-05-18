@@ -6,6 +6,8 @@ Pokegram! Infinite scroll feed of Pokemons, optimized queries, and web responsiv
 ## Deveoper
 [@edwindelbosque](https://github.com/edwindelbosque)
 
+[Access deployed site here](https://pokedex-gilt-five.vercel.app/)
+
 ## How to run Pokegram locally
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
